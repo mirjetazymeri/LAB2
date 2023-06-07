@@ -226,6 +226,50 @@ p {
 }
 /*------------ home ----------*/
 /*------------ Branding ----------*/
+*------------ home ----------*/
+/*------------ Branding ----------*/
+.Slider {
+  margin-top: 90px;
+}
+
+.slider-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+
+.slider-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 900px; /* Increase the height as desired */
+}
+
+.slider-item img {
+  max-width: 100%;
+  max-height: 100%;
+ 
+}
+
+/* Adjust the width of .slider-container if needed */
+.slider-container {
+  width: 100%;
+}
+
+/* Adjust the width of .slider-item if needed */
+.slider-item {
+  width: 100%;
+}
+
+
+
+
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
