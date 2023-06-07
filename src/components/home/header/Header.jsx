@@ -33,8 +33,8 @@ const Header = () => {
               <li>
                 <Link to='/aboutus'>About Us</Link>
               </li>
-                            <li>
-                <Link to='/contact'>Contact</Link>
+                   <li>
+              <a href="http://localhost:8080/createContacts">Contactt</a>
               </li>
               <li className='icon'>
                 <SearchOutlinedIcon className='HeaderIcon' />
