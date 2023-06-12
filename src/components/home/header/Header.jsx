@@ -28,13 +28,16 @@ const Header = () => {
                 <Link to='/shop'>Shop</Link>
               </li>
               <li>
-                <Link to='/services'>Services</Link>
+                <Link to='/blog'>Blog</Link>
               </li>
               <li>
                 <Link to='/aboutus'>About Us</Link>
               </li>
                    <li>
               <a href="http://localhost:8080/createContacts">Contactt</a>
+              </li>
+   <li>
+                <a href="https://localhost:7221/Identity/Account/Login">Login</a>
               </li>
               <li className='icon'>
                 <SearchOutlinedIcon className='HeaderIcon' />
