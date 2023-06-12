@@ -21,6 +21,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddSingleton<IEmailSender, EmailSender>();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddCors(options =>
+           options.AddDefaultPolicy(policy =>
+           {
+               policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+           }));
 
 var app = builder.Build();
 
@@ -41,6 +46,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.MapRazorPages();
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 
