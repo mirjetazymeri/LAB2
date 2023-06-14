@@ -17,7 +17,11 @@ const routes = [
     name: 'createContacts',
     component: () => import('../components/CreateContactComponent'),
   },
-  
+  {
+    path: '/aboutUs',
+    name: 'aboutUs',
+    component: () => import('../components/AboutUs')
+  },
 
   
 ]
