@@ -27,7 +27,7 @@ const Branding = () => {
       id: "2000",
       heading: "New Feature",
       desc:
-        "Lorem ipsum dolor sit amet, provid adipisicing elit. Aliquam dolorum nu illo similique! Impedit.",
+        "Lorem ipsum dolor sit amet, provid adipissicing elit. Aliquam dolorum nu illo similique! Impedit.",
     },
     {
       id: "2500",
