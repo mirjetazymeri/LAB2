@@ -8,6 +8,7 @@ import Blog from "./components/blog/Blog"
 import Shop from './views/Shop';
 import Create from "./views/Create"
 import ViewPosts from './views/ViewPosts';
+import Main from "./components/Sidebar/main"
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Switch>
           <Route path='/' exact component={HomePages} />
           <Route path='/blog' exact component={Blog}  />
+               <Route path='/dashboard' exact component={Main}  />
 
           <Route path='/shop' exact component={Shop} />
           <Route path='/create' exact component={Create} />
