@@ -40,4 +40,6 @@ post_route.get('/delete-post/:id', postController.deletePost);
 
 post_route.post('/update-post', upload.single('image'), postController.updatePost);
 
+post_route.get('/get-post-by-title/:title', postController.getPostByTitle);
+
 module.exports = post_route;
