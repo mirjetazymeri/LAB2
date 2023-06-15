@@ -1,40 +1,41 @@
-import axios from 'axios';
+import axios from "axios";
 
-class Post{
-    create(formData) {
-        const url = "http://localhost:8000/api/create-post";
-        const config = {
-            headers: {
-                 'Content-type':'multipart/form-data',
-            }
-        };
-        return axios.post(url, formData, config);
-    }
+const postServices = {
+  create: (formData) => {
+    const url = "http://localhost:8000/api/create-post";
+    const config = {
+      headers: {
+        'Content-type': 'multipart/form-data',
+      },
+    };
+    return axios.post(url, formData, config);
+  },
 
-    getPosts() {
-        const url = "http://localhost:8000/api/get-posts";
-        return axios.get(url);
-    }
+  getPosts: () => {
+    const url = "http://localhost:8000/api/get-posts";
+    return axios.get(url);
+  },
 
-    deletePost(id) {
-        const url = "http://localhost:8000/api/delete-post/" + id;
-        return axios.get(url);
-    }
+  deletePost: (id) => {
+    const url = `http://localhost:8000/api/delete-post/${id}`;
+    return axios.get(url);
+  },
 
-    update(formData) {
-        const url = "http://localhost:8000/api/update-post";
-        const config = {
-            headers: {
-                 'Content-type':'multipart/form-data',
-            }
-        };
-        return axios.post(url, formData, config);
-    }
+  update: (formData) => {
+    const url = "http://localhost:8000/api/update-post";
+    const config = {
+      headers: {
+        'Content-type': 'multipart/form-data',
+      },
+    };
+    return axios.post(url, formData, config);
+  },
 
-    getProductById(id) {
-        const url = `http://localhost:8000/api/get-post/${id}`;
-        return axios.get(url);
-    }
-}
+  getProductByTitle: (title) => {
+    const url = `http://localhost:8000/api/get-post-by-title/${title}`;
+    return axios.get(url);
+  }
+  
+};
 
-export default new Post();
+export default postServices;
