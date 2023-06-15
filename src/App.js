@@ -9,6 +9,7 @@ import Shop from './views/Shop';
 import Create from "./views/Create"
 import ViewPosts from './views/ViewPosts';
 import Main from "./components/Sidebar/main"
+import ProductDetails from "./components/ProductDetails"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/shop' exact component={Shop} />
           <Route path='/create' exact component={Create} />
           <Route path='/show' exact component={ViewPosts} />
+          <Route path="/products/:title" component={ProductDetails} />
         </Switch>
         <Footer />
       </Router>
