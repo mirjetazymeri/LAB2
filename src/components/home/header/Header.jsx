@@ -30,8 +30,8 @@ const Header = () => {
               <li>
                 <Link to='/blog'>Blog</Link>
               </li>
-              <li>
-                <Link to='/aboutus'>About Us</Link>
+               <li>
+                <a href="http://localhost:8080/aboutus">About us</a>
               </li>
                    <li>
               <a href="http://localhost:8080/createContacts">Contactt</a>
