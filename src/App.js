@@ -10,8 +10,16 @@ import Create from "./views/Create"
 import ViewPosts from './views/ViewPosts';
 import Main from "./components/sidebar/Main"
 import ProductDetails from "./components/ProductDetails"
+import CartPage from "./components/CartPage";
 
 const App = () => {
+    const [cartItems, setCartItems] = useState([]);
+    const [showCart, setShowCart] = useState(false);
+  
+    const handleAddToCart = (item) => {
+      setCartItems([...cartItems, item]);
+    };
+  
   return (
     <>
       <Router>
@@ -25,7 +33,10 @@ const App = () => {
           <Route path='/create' exact component={Create} />
           <Route path='/show' exact component={ViewPosts} />
           <Route path="/products/:title" component={ProductDetails} />
+          <Route path='/cart' render={() => <CartPage cartItems={cartItems} />} />
         </Switch>
+        {showCart && <CartPage cartItems={cartItems} />}
+        <br /><br />
         <Footer />
       </Router>
     </>
