@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import postServices from "../services/postServices";
 import { Link } from "react-router-dom";
-import '../style/Products.css'
+import '../style/Products.css';
 
 function Product() {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
-    setPosts(await postServices.getPosts());
+    const response = await postServices.getPosts();
+    setPosts(response.data.data);
   };
 
   useEffect(() => {
@@ -16,9 +17,8 @@ function Product() {
 
   return (
     <div className="container_product_card">
-      {posts.data !== undefined &&
-        posts.data.data.length > 0 &&
-        posts.data.data.map((post) => (
+      {posts.length > 0 &&
+        posts.map((post) => (
           <div className="product_card" key={post._id}>
             <div className="top_card">
               <img
@@ -35,7 +35,7 @@ function Product() {
               <div className="product_description">
                 <p>{post.description}</p>
               </div>
-              <Link className="cta_view_product">
+              <Link to={`/products/${post.title}`} className="cta_view_product">
                 View Product
               </Link>
             </div>
