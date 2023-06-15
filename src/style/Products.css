@@ -3,8 +3,6 @@
     padding: 0;
   }
   
-
-  
   .container_product_card {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +23,7 @@
   }
   
   .product_card .top_card {
-    background-color: #EF3749;
+    background-color: #0077b6;
     height: 45%;
     position: relative;
     border-radius: 15px 15px 0 0;
@@ -88,7 +86,7 @@
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #EF3749;
+    background-color: #0077b6;
     color: white;
     border-radius: 200px;
     outline: none;
