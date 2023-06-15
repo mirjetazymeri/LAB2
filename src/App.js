@@ -1,36 +1,35 @@
-import React from 'react';
-import './Sidebar.css';
+import React from "react"
+import "./App.css"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Footer from "./components/home/Footer"
+import Header from "./components/home/header/Header"
+import HomePages from "./components/pages/HomePages"
+import Blog from "./components/blog/Blog"
+import Shop from './views/Shop';
+import Create from "./views/Create"
+import ViewPosts from './views/ViewPosts';
+import Main from "./components/sidebar/Main"
+import ProductDetails from "./components/ProductDetails"
 
-const Sidebar = () => {
+const App = () => {
   return (
-     <div className="header">
-      <h2>ADMIN DASHBOARD</h2>
-    <div className="sidebar">
-      <ul className="nav flex-column">
-        <li className="nav-item">
-          <a className="nav-link" href="https://localhost:7221/Stories">
-            Create Blog Stories
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="http://localhost:3000/create">
-            Add a product
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="http://localhost:3000/show">
-            Show Products
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="http://localhost:8080/listContacts">
-            Feedbacks
-          </a>
-        </li>
-      </ul>
-    </div>
-    </div>
-  );
-};
+    <>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/' exact component={HomePages} />
+          <Route path='/blog' exact component={Blog}  />
+               <Route path='/dashboard' exact component={Main}  />
 
-export default Sidebar;
+          <Route path='/shop' exact component={Shop} />
+          <Route path='/create' exact component={Create} />
+          <Route path='/show' exact component={ViewPosts} />
+          <Route path="/products/:title" component={ProductDetails} />
+        </Switch>
+        <Footer />
+      </Router>
+    </>
+  )
+}
+
+export default App
