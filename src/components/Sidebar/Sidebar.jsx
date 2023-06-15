@@ -9,17 +9,22 @@ const Sidebar = () => {
       <ul className="nav flex-column">
         <li className="nav-item">
           <a className="nav-link" href="https://localhost:7221/Stories">
-            Section 1
+            Create Blog Stories
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#section2">
-            Section 2
+          <a className="nav-link" href="http://localhost:3000/create">
+            Add a product
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#section3">
-            Section 3
+          <a className="nav-link" href="http://localhost:3000/show">
+            Show Products
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="http://localhost:8080/listContacts">
+            Feedbacks
           </a>
         </li>
       </ul>
