@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import postServices from "../services/postServices";
 import "../style/ViewProduct.css";
 
-function ProductDetails({ match }) {
+function ProductDetails({ match, onAddToCart }) {
   const [product, setProduct] = useState(null);
+  const [addedToCart, setAddedToCart] = useState(false);
+
   const productTitle = match.params.title;
 
   useEffect(() => {
@@ -23,6 +26,12 @@ function ProductDetails({ match }) {
     return <div>Loading...</div>;
   }
 
+  const handleAddToCart = () => {
+    const item = { ...product };
+    onAddToCart(item);
+    setAddedToCart(true);
+  };
+
   return (
     <div className="product-details-container">
       <div className="product-details-left">
@@ -38,7 +47,13 @@ function ProductDetails({ match }) {
         <p className="product-price">Price: ${product.price}</p>
         <p className="product-brand">Brand: {product.brand}</p>
         <p className="product-stock">Stock: {product.countInStock}</p>
-        <button className="add-to-cart-button">Add to Cart</button>
+        <button onClick={handleAddToCart}>Add to Cart</button>
+        {addedToCart && (
+          <p>
+            Item added to cart!{" "}
+            <Link to="/cart">Go to Cart</Link>
+          </p>
+        )}
       </div>
     </div>
   );
