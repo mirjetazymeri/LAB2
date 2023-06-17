@@ -24,7 +24,9 @@ const Home = () => {
               <i className='fab fa-dribbble dribbble'></i>
             </div>
             <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button className='primary-btn'>Contact Us</button>
+            <button className='primary-btn'>
+              <a href="http://localhost:3000/shop">SHOP NOW</a>
+            </button>
           </div>
         </div>
       </section>
