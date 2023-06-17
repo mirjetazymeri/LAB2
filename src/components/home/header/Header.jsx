@@ -29,7 +29,7 @@ const Header = () => {
                 <Link to='/blog'>Blog</Link>
               </li>
               <li>
-                <Link to='http://localhost:8080/aboutus'>About Us</Link>
+                <a href='http://localhost:8080/aboutus'>About Us</a>
               </li>
                    <li>
               <a href="http://localhost:8080/createContacts">Contactt</a>
