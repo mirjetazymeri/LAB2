@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import postServices from "../services/postServices";
 import { Link } from "react-router-dom";
 import '../style/Products.css';
+import axios from "axios";
 
 function Product() {
   const [posts, setPosts] = useState([]);
@@ -11,8 +12,18 @@ function Product() {
     setPosts(response.data.data);
   };
 
+  const createStripeProducts = async () => {
+    try {
+      const createdProducts = await axios.get("http://localhost:4000/products");
+      console.log("Created products:", createdProducts.data);
+    } catch (error) {
+      console.error("Error creating products:", error);
+    }
+  };
+
   useEffect(() => {
     fetchPosts();
+    createStripeProducts(); 
   }, []);
 
   return (
@@ -46,3 +57,4 @@ function Product() {
 }
 
 export default Product;
+
