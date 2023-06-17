@@ -94,5 +94,11 @@
     padding: 0.45rem;
     font-size: 10px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .bottom_card .cta_view_product:hover {
+    background-color: #022d36;
   }
   
