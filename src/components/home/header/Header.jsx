@@ -1,7 +1,5 @@
 import React, { useState } from "react"
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
-import WorkIcon from "@mui/icons-material/Work"
-import GridViewTwoToneIcon from "@mui/icons-material/GridViewTwoTone"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import { Link } from "react-router-dom"
@@ -30,8 +28,8 @@ const Header = () => {
               <li>
                 <Link to='/blog'>Blog</Link>
               </li>
-               <li>
-                <a href="http://localhost:8080/aboutus">About us</a>
+              <li>
+                <Link to='http://localhost:8080/aboutus'>About Us</Link>
               </li>
                    <li>
               <a href="http://localhost:8080/createContacts">Contactt</a>
@@ -40,9 +38,9 @@ const Header = () => {
                 <a href="https://localhost:7221/Identity/Account/Login">Login</a>
               </li>
               <li className='icon'>
-                <SearchOutlinedIcon className='HeaderIcon' />
-                <WorkIcon className='HeaderIcon' />
-                <GridViewTwoToneIcon className='HeaderIcon' />
+                <a href="/cart">
+                  <ShoppingCartIcon className='HeaderIcon' />
+                </a>
               </li>
             </ul>
           </div>
