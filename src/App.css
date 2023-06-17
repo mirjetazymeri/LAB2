@@ -199,6 +199,13 @@ button {
   cursor: pointer;
 }
 
+.primary-btn a{
+  text-decoration: none;
+}
+.primary-btn a:hover{
+  text-decoration: none;
+}
+
 .primary-btn {
   padding: 15px 40px;
   background: #a7a6a692;
