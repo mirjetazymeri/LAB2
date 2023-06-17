@@ -1,4 +1,30 @@
 <template>
+   <header class="header">
+      <div class="logo">
+      </div>
+      <div class="nav">
+        <ul :class="sidebar ? 'nav-links-sidebar' : 'nav-links'" @click="setSidebar(false)">
+          <li>
+            <a href="http://localhost:3000/">Home</a>
+          </li>
+          <li>
+            <a href="http://localhost:3000/shop">Shop</a>
+          </li>
+          <li>
+            <router-link to="/services">Services</router-link>
+          </li>
+          <li>
+            
+            <a href="http://localhost:3000/">Blog</a>
+          
+          </li>
+          <li>
+            <a href="http://localhost:8080/createContacts">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+  </header>
     <div class="responsive-container-block big-container">
     <div class="responsive-container-block container">
         <div class="responsive-container-block">
@@ -28,6 +54,26 @@
         </div>
     </div>
     </div>
+
+    <footer>
+      <div class="box">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <div class="SocailIcon">
+          <i class="fab fa-facebook-f facebook"></i>
+          <i class="fab fa-instagram instagram"></i>
+          <i class="fab fa-twitter twitter"></i>
+          <i class="fab fa-youtube youtube"></i>
+        </div>
+        <p>Copyright</p>
+      <label>
+        Design & Developed by...
+      </label>
+      </div>
+
+  </footer>
 </template>
 
 
@@ -70,6 +116,87 @@ a {
   color: inherit;
 }
 
+header {
+  color: black;
+  
+text-decoration: none;
+  color: black;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.navbar-items-icon {
+  color: #000;
+  display: none;
+}
+header ul {
+  color: #000;
+text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+
+}
+header ul li {
+  color: black;
+  
+text-decoration: none;
+  display: flex;
+  justify-content: space-between;;
+  margin-left: 30px;
+}
+header ul li a {
+  color: black;
+  
+text-decoration: none;
+  font-weight: 500;
+  transition: 0.5s;
+}
+header ul li a:hover {
+  color: #b91b1b;
+  font-weight: 500;
+}
+
+
+header.active {
+  color: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 28px 0 rgb(0 0 0 / 6%);
+  width: 100%;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  header .icon {
+    
+  }
+ 
+  .nav-links-sidebar {
+    color: black;
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    left: 50px;
+    top: 75px;
+    transition: 0.5s;
+    width: 100%;
+    height: 30vh;
+    
+text-decoration: none;
+    z-index: 5;
+  }
+
+  header ul li {
+    color: black;
+    margin-bottom: 30px;
+  }
+
+  
+}
 
 .responsive-container-block {
   min-height: 75px;
@@ -424,5 +551,60 @@ a {
   .wk-mobile-12 {
     width: 100%;
   }
+}
+
+footer {
+  background-color: #08071c;
+  padding: 50px 0 0 0;
+  color: #ffffff;
+}
+footer p {
+  color: #f2ebeb;
+  margin: 15px 0;
+}
+footer .SocailIcon i {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+footer h2 {
+  margin-bottom: 20x;
+  font-size: 10px;
+}
+footer li {
+  color: #fff;
+  margin-bottom: 15px;
+}
+footer li:before {
+  content: "·";
+  font-size: 40px;
+  vertical-align: middle;
+  line-height: 10px;
+  margin-right: 20px;
+  color: #38d16a;
+}
+footer .box p {
+  margin: 0;
+  margin-top: 15px;
+}
+footer span {
+  color: #38d16a;
+  opacity: 1;
+}
+footer .icon {
+  margin-top: 20px;
+  display: flex;
+}
+footer .icon i {
+  color: #38d16a;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+.legal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin-top: 70px;
+  padding: 20px 0;
 }
 </style>
