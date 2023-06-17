@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import postServices from "../services/postServices";
-import "../style/ViewProduct.css";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import postServices from '../services/postServices';
+import '../style/ViewProduct.css';
 
 function ProductDetails({ match, onAddToCart }) {
   const [product, setProduct] = useState(null);
@@ -36,7 +36,7 @@ function ProductDetails({ match, onAddToCart }) {
     <div className="product-details-container">
       <div className="product-details-left">
         <img
-          src={"http://127.0.0.1:8000/api/postImages/" + product.image}
+          src={`http://127.0.0.1:8000/api/postImages/${product.image}`}
           alt={product.title}
           className="product-image"
         />
@@ -50,8 +50,7 @@ function ProductDetails({ match, onAddToCart }) {
         <button onClick={handleAddToCart}>Add to Cart</button>
         {addedToCart && (
           <p>
-            Item added to cart!{" "}
-            <Link to="/cart">Go to Cart</Link>
+            Item added to cart! <Link to="/cart">Go to Cart</Link>
           </p>
         )}
       </div>
